@@ -1,0 +1,159 @@
+<div class="col-md-10 mt-4 mx-auto my-5">
+  <div class="jumbotron py-3">
+    <h3 class="f-Cormorant text-uppercase text-center">{{ titulo }}</h3>
+    <p class="text-right text-danger m-0" style="font-size: 12px;">
+      * Campos obrigatórios
+    </p>
+    <form
+      [formGroup]="livroForm"
+      (ngSubmit)="salvar(livroForm.value)"
+      autocomplete="off"
+    >
+      <div class="form-group">
+        <p class="m-0 p-0 text-danger d-inline">*</p>
+        <label for="titulo">Titulo</label>
+        <input
+          type="text"
+          class="form-control mY-5"
+          id="titulo"
+          placeholder="Tipo de Produto"
+          formControlName="titulo"
+          [ngClass]="{
+            'is-valid':
+              !livroForm.controls['titulo'].invalid &&
+              (livroForm.controls['titulo'].dirty ||
+                livroForm.controls['titulo'].touched),
+            'is-invalid':
+              livroForm.controls['titulo'].invalid &&
+              (livroForm.controls['titulo'].dirty ||
+                livroForm.controls['titulo'].touched)
+          }"
+        />
+      </div>
+      <div class="form-group">
+        <p class="m-0 p-0 text-danger d-inline">*</p>
+        <label for="edicao">Edição</label>
+        <input
+          type="text"
+          class="form-control mY-5"
+          id="edicao"
+          placeholder="Tipo de Produto"
+          formControlName="edicao"
+          [ngClass]="{
+            'is-valid':
+              !livroForm.controls['edicao'].invalid &&
+              (livroForm.controls['edicao'].dirty ||
+                livroForm.controls['edicao'].touched),
+            'is-invalid':
+              livroForm.controls['edicao'].invalid &&
+              (livroForm.controls['edicao'].dirty ||
+                livroForm.controls['edicao'].touched)
+          }"
+        />
+      </div>
+      <div class="form-group">
+        <p class="m-0 p-0 text-danger d-inline">*</p>
+        <label for="npaginas">Nº de Paginas</label>
+        <input
+          type="text"
+          class="form-control mY-5"
+          id="npaginas"
+          placeholder="Tipo de Produto"
+          formControlName="npaginas"
+          [ngClass]="{
+            'is-valid':
+              !livroForm.controls['npaginas'].invalid &&
+              (livroForm.controls['npaginas'].dirty ||
+                livroForm.controls['npaginas'].touched),
+            'is-invalid':
+              livroForm.controls['npaginas'].invalid &&
+              (livroForm.controls['npaginas'].dirty ||
+                livroForm.controls['npaginas'].touched)
+          }"
+        />
+      </div>
+      <div class="form-group">
+        <p class="m-0 p-0 text-danger d-inline">*</p>
+        <label for="tipo">Tipo</label>
+        <input
+          type="text"
+          class="form-control mY-5"
+          id="tipo"
+          placeholder="Tipo de Produto"
+          formControlName="tipo"
+          [ngClass]="{
+            'is-valid':
+              !livroForm.controls['tipo'].invalid &&
+              (livroForm.controls['tipo'].dirty ||
+                livroForm.controls['tipo'].touched),
+            'is-invalid':
+              livroForm.controls['tipo'].invalid &&
+              (livroForm.controls['tipo'].dirty ||
+                livroForm.controls['tipo'].touched)
+          }"
+        />
+      </div>
+      <div class="form-group">
+        <p class="m-0 p-0 text-danger d-inline">*</p>
+        <label for="categoria">Categoria</label>
+        <input
+          type="text"
+          class="form-control mY-5"
+          id="categoria"
+          placeholder="Tipo de Produto"
+          formControlName="categoria"
+          [ngClass]="{
+            'is-valid':
+              !livroForm.controls['categoria'].invalid &&
+              (livroForm.controls['categoria'].dirty ||
+                livroForm.controls['categoria'].touched),
+            'is-invalid':
+              livroForm.controls['categoria'].invalid &&
+              (livroForm.controls['categoria'].dirty ||
+                livroForm.controls['categoria'].touched)
+          }"
+        />
+      </div>
+      <div class="form-group">
+        <p class="m-0 p-0 text-danger d-inline">*</p>
+        <label for="autor">Autor</label>
+        <input
+          type="text"
+          class="form-control mY-5"
+          id="autor"
+          placeholder="Tipo de Produto"
+          formControlName="autor"
+          [ngClass]="{
+            'is-valid':
+              !livroForm.controls['autor'].invalid &&
+              (livroForm.controls['autor'].dirty ||
+                livroForm.controls['autor'].touched),
+            'is-invalid':
+              livroForm.controls['autor'].invalid &&
+              (livroForm.controls['autor'].dirty ||
+                livroForm.controls['autor'].touched)
+          }"
+        />
+      </div>
+      <div class="row mb-4">
+        <div class="col-md-5">
+          <button
+            type="submit"
+            class="btn btn-success btn-block"
+            [disabled]="!livroForm.valid"
+          >
+            Salvar
+          </button>
+        </div>
+        <div class="col-md"></div>
+        <div class="col-md-5">
+          <button [routerLink]="['/livro/list']" class="btn btn-danger btn-block">
+            Voltar
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- <pre>{{ livroForm.value | json }}</pre> -->

@@ -1,0 +1,54 @@
+<div class="col-md-10 mt-4 mx-auto my-5">
+  <div class="jumbotron py-3">
+    <h3 class="f-Cormorant text-uppercase text-center">{{ titulo }}</h3>
+    <p class="text-right text-danger m-0" style="font-size: 12px;">
+      * Campos obrigatórios
+    </p>
+    <form
+      [formGroup]="produtoForm"
+      (ngSubmit)="salvar(produtoForm.value)"
+      autocomplete="off"
+    >
+      <div class="form-group">
+        <p class="m-0 p-0 text-danger d-inline">*</p>
+        <label for="tipo">Tipo</label>
+        <input
+          type="text"
+          class="form-control mY-5"
+          id="tipo"
+          placeholder="Tipo de Produto"
+          formControlName="tipo"
+          [ngClass]="{
+            'is-valid':
+              !produtoForm.controls['tipo'].invalid &&
+              (produtoForm.controls['tipo'].dirty ||
+                produtoForm.controls['tipo'].touched),
+            'is-invalid':
+              produtoForm.controls['tipo'].invalid &&
+              (produtoForm.controls['tipo'].dirty ||
+                produtoForm.controls['tipo'].touched)
+          }"
+        />
+      </div>
+      <div class="row mb-4">
+        <div class="col-md-5">
+          <button
+            type="submit"
+            class="btn btn-success btn-block"
+            [disabled]="!produtoForm.valid"
+          >
+            Salvar
+          </button>
+        </div>
+        <div class="col-md"></div>
+        <div class="col-md-5">
+          <button [routerLink]="['/produto']" class="btn btn-danger btn-block">
+            Voltar
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- <pre>{{ produtoForm.value | json }}</pre> -->

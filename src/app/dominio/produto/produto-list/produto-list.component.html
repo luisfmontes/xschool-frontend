@@ -1,0 +1,29 @@
+<section class="my-4">
+  <div class="row my-2">
+    <div class="col-md-9">
+      <h3>Lista de Produtos</h3>
+    </div>
+    <!-- <div class="col-md">
+        <button type="button" class=" btn btn-primary btn-block" [routerLink]="['/produto/new']"> Adicionar Tipo</button>
+    </div> -->
+  </div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Tipo</th>
+        <th scope="col">Operações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>Livro</td>
+        <td>
+          <a [routerLink]="['/livro/list']">Visualizar</a> |
+          <a [routerLink]="['/livro/new']">Incluir</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>

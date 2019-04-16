@@ -1,0 +1,22 @@
+{
+  "livro": [
+    {
+      "id": 1,
+      "titulo": "Pequeno Principe",
+      "edicao": "2º Edição",
+      "npaginas": 10,
+      "tipo": "sa",
+      "categoria": "Fantasia",
+      "autor": "Jhon Lidisa"
+    },
+    {
+      "id": 2,
+      "titulo": "E noix que voa",
+      "edicao": "1º",
+      "npaginas": "50",
+      "tipo": "ilustrado",
+      "categoria": "Conhecimento",
+      "autor": "Lousi Eviena "
+    }
+  ]
+}

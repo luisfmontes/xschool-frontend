@@ -1,0 +1,39 @@
+<section class="my-4">
+  <div class="row my-2">
+    <div class="col-md-9">
+      <h3>Lista de Livros</h3>
+    </div>
+    <div class="col-md">
+        <button type="button" class=" btn btn-primary btn-block" [routerLink]="['/livro/new']"> Adicionar Livro</button>
+    </div>
+  </div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Titulo</th>
+        <th scope="col">Edição</th>
+        <th scope="col">Nº Pags</th>
+        <th scope="col">Tipo</th>
+        <th scope="col">Categoria</th>
+        <th scope="col">Autor</th>
+        <th scope="col">Operações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let livro of livros">
+        <td>{{livro.id}}</td>
+        <td>{{livro.titulo}}</td>
+        <td>{{livro.edicao}}</td>
+        <td>{{livro.npaginas}}</td>
+        <td>{{livro.tipo}}</td>
+        <td>{{livro.categoria}}</td>
+        <td>{{livro.autor}}</td>
+        <td>
+          <a [routerLink]="['/livro/update', livro.id]">Alterar</a> |
+          <a (click)="excluir(livro.id)">Excluir</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>
