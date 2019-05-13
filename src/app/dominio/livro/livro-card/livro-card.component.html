@@ -1,0 +1,17 @@
+<div class="place-info-box">
+  <span class="place-info-box-icon">
+    <img *ngIf="livro && (index % 2 != 0)" [src]="ImagPath1" alt="Imagem do livro" />
+    <img *ngIf="livro && (index % 2 == 0)" [src]="ImagPath2" alt="Imagem do livro" />
+  </span>
+  <div class="place-info-box-content">
+    <span class="place-info-box-text">{{ livro?.titulo }}</span>
+    <span class="place-info-box-star">{{ livro?.edicao }} Edição</span>
+    <span class="place-info-box-detail"><b>Categotria: </b> {{ livro?.categoria.nome }}</span>
+    <span class="place-info-box-detail"><b>Autor: </b> {{ livro?.autor.nome }}</span>
+    <span class="place-info-box-text star"><a (click)="AddFav()" >
+        <img *ngIf="fav" class="iconimag" [src]="fav_on" alt="Favorito" />
+        <img *ngIf="!fav" class="iconimag" [src]="fav_none" alt="Not Favorito" />
+      </a></span>
+      <span *ngIf="!flist" class="place-info-box-content m-0"> <button class="btn btn-secondary" (click)="adicionarLivro(livro)">Adicionar ao Carrinho</button></span>
+  </div>
+</div>

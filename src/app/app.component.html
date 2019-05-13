@@ -1,18 +1,11 @@
 <div class="container">
-  <div class="row">
-    <div class="col-md-12">
+  <div class="row bg-warning mt-2">
+    <div class="col-md-5 ">
       <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-warning">
+        <nav class="navbar navbar-expand-lg navbar-light  ">
           <a class="navbar-brand" href="#">Xschool</a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNav">
@@ -20,13 +13,43 @@
               <li class="nav-item" routerLinkActive="active">
                 <a class="nav-link" [routerLink]="['/home']">Home</a>
               </li>
-              <li class="nav-item" routerLinkActive="active">
+              <!-- <li class="nav-item" routerLinkActive="active">
                 <a class="nav-link" [routerLink]="['/produto']">Produtos</a>
+              </li> -->
+              <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link" [routerLink]="['/livro/home']">Livros</a>
               </li>
             </ul>
           </div>
         </nav>
       </header>
+    </div>
+    <div class="col-7 align-content-lg-around">
+      <div class="row">
+        <div class="col-md-3 mt-1">
+        <nav class="navbar navbar-expand-lg navbar-light ">
+          <ul class="navbar-nav">
+            <li class="nav-item dropdown" routerLinkActive="active">
+              <!-- <img class="rounded-circle h-25 " src="assets/Imagens/foto1.jpg" alt="Foto do usuario" /> -->
+              <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Luis Fernando</a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" [routerLink]="['/usuario/perfil']">Editar perfil</a>
+                <a class="dropdown-item" [routerLink]="['/favoritos/flist']">Favoritos</a>
+                 <a class="dropdown-item" [routerLink]="['/livro/list']">Meus livros</a>
+           <!-- <a class="dropdown-item" [routerLink]="['/encontros/list']">Encontros</a>
+            <a class="dropdown-item" [routerLink]="['/usuario/consulta']">Consultas</a> -->
+                <a class="dropdown-item">Sair</a>
+              </div>
+            </li>
+          </ul>
+          </nav>
+        </div>
+        <div class="col-md-9 p-0">
+          <carrinho-widget></carrinho-widget>
+        </div>
+      </div>
     </div>
   </div>
   <div class="row">
@@ -34,12 +57,10 @@
       <router-outlet></router-outlet>
     </div>
   </div>
-  <div class="row">
-    <div class="col-md-12">
-      <footer class="text-center">
-        <hr />
-        <p>CopyRight &#174; Direitos Reservados</p>
-      </footer>
+  <footer class="row mt-5">
+    <div class="col-md-12 text-center">
+      <hr />
+      <p>CopyRight &#174; Direitos Reservados</p>
     </div>
-  </div>
+  </footer>
 </div>

@@ -1,0 +1,38 @@
+img {
+  max-width: 28px;
+}
+
+.carrinho-widget {
+  text-align: center;
+  position: relative;
+  width: 45px;
+  margin: 0 auto;
+}
+
+.carrinho-widget span {
+  color: #000911;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.carrinho-widget .title {
+  display: block;
+}
+
+.carrinho-widget .badge {
+  position: absolute;
+  font-size: 11px;
+  top: -6px;
+  right: 0px;
+  padding: 3px;
+  height: 16px;
+  width: 16px;
+}
+
+.carrinho-widget a {
+  color: #f8f9fa;
+}
+
+.carrinho-widget a:hover {
+  text-decoration: none;
+}

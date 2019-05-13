@@ -11,12 +11,13 @@ import { Router } from "@angular/router";
 })
 export class ProdutoListComponent implements OnInit {
   produtos: Produto[];
+  lista: string =  '/list';
 
   constructor(private produtoService: ProdutoService, private router: Router) {}
 
   ngOnInit() {
-    // this.produtoService.buscarTodos().subscribe(resposta => {
-    //   this.produtos = resposta;
-    // });
+    this.produtoService.buscarTodos().subscribe(resposta => {
+      this.produtos = resposta;
+    });
   }
 }

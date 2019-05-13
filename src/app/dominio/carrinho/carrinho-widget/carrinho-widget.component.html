@@ -1,0 +1,18 @@
+<a
+  tabindex="0"
+  data-toggle="popover"
+  data-trigger="focus"
+  title="Carrinho"
+  data-html="true"
+  data-placement="bottom"
+  data-content="<div>Teste</div>"
+  ><div class="carrinho-widget">
+    <a class="nav-link " [routerLink]="['carrinho']">
+      <img src="assets/Imagens/cart.png" />
+      <span class="title">Carrinho</span>
+      <span class="badge badge-pill ">{{
+        carrinhoService.qtdTotalCarrinho()
+      }}</span>
+  </a>
+  </div>
+</a>

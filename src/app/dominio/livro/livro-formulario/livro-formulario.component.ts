@@ -5,6 +5,11 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 import { Livro } from '../livro';
 import { LivroService } from '../livro.service';
+import { Categoria } from '../../categoria/categoria';
+import { CategoriaService } from '../../categoria/categoria.service';
+import { Autor } from '../../autor/autor';
+import { AutorService } from '../../autor/autor.service';
+import { ValidationService } from '../../shared/validation/validation.service';
 
 
 @Component({
@@ -13,8 +18,9 @@ import { LivroService } from '../livro.service';
   styleUrls: ['./livro-formulario.component.css']
 })
 export class LivroFormularioComponent implements OnInit {
-
   livro: Livro;
+  categorias: Categoria[];
+  autores: Autor[];
   livroForm: FormGroup;
   titulo: string;
 
@@ -22,7 +28,9 @@ export class LivroFormularioComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private builder: FormBuilder,
-    private livroService: LivroService
+    private livroService: LivroService,
+    private categoriaService: CategoriaService,
+    private autorService: AutorService 
   ) { }
 
   ngOnInit() {
@@ -37,15 +45,23 @@ export class LivroFormularioComponent implements OnInit {
     ? 'Novo Livro'
     : 'Alterar Livro';
 
+    this.categoriaService.buscarTodos().subscribe(resposta => {
+      this.categorias = resposta; });
+
+      this.autorService.buscarTodos().subscribe(resposta => {
+        this.autores = resposta; });
+
     /* Reactive Forms */
     this.livroForm = this.builder.group({
       id: [],
       titulo: this.builder.control('', [Validators.required, Validators.maxLength(50)]),
       edicao: this.builder.control('', [Validators.required]),
-      npaginas: this.builder.control('', [Validators.required]),
+      npaginas: this.builder.control('', [Validators.required,Validators.minLength(1),Validators.maxLength(6),ValidationService.onlynunberValidator]),
       tipo: this.builder.control('', [Validators.required]),
       categoria: this.builder.control('', [Validators.required]),
       autor: this.builder.control('', [Validators.required]),
+      preco: this.builder.control('', [Validators.required]),
+      favorito: false
     }, {});
 
     // Se existir `ID` realiza busca para trazer os dados

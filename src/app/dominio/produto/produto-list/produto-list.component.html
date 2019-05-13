@@ -4,7 +4,7 @@
       <h3>Lista de Produtos</h3>
     </div>
     <!-- <div class="col-md">
-        <button type="button" class=" btn btn-primary btn-block" [routerLink]="['/produto/new']"> Adicionar Tipo</button>
+        <button type="button" class=" btn btn-primary btn-block" [routerLink]="['/produto/new']"> Adicionar Produto</button>
     </div> -->
   </div>
   <table class="table">
@@ -16,12 +16,12 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>1</td>
-        <td>Livro</td>
+        <tr *ngFor="let produto of produtos">
+        <td>{{produto.id}}</td>
+        <td>{{produto.tipo}}</td>
         <td>
           <a [routerLink]="['/livro/list']">Visualizar</a> |
-          <a [routerLink]="['/livro/new']">Incluir</a>
+          <!-- <a [routerLink]="['/{{produto.id}}/new']">Incluir</a> -->
         </td>
       </tr>
     </tbody>

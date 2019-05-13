@@ -8,11 +8,18 @@ import { LivroRouting } from './livro.routing';
 import { LivroService } from './livro.service';
 import { LivroListComponent } from './livro-list/livro-list.component';
 import { LivroFormularioComponent } from './livro-formulario/livro-formulario.component';
+import { LivroHomeComponent } from './livro-home/livro-home.component';
+import { LivroCardComponent } from './livro-card/livro-card.component';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { NgxMaskModule } from "ngx-mask";
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
     declarations: [
         LivroListComponent,
-        LivroFormularioComponent
+        LivroFormularioComponent,
+        LivroHomeComponent,
+        LivroCardComponent
     ],
     imports: [
         // Angular
@@ -20,7 +27,9 @@ import { LivroFormularioComponent } from './livro-formulario/livro-formulario.co
         CommonModule,
         ReactiveFormsModule,
         FormsModule,
-
+        NgxPaginationModule,
+        NgxMaskModule.forRoot(),
+        SharedModule,
         // Componente
         LivroRouting
     ],

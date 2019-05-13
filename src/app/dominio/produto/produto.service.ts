@@ -10,7 +10,7 @@ import { Produto } from './produto';
 @Injectable()
 export class ProdutoService {
 
-    private URL = 'http://localhost:3000';
+    private URL = 'http://localhost:8888';
     constructor(private http: HttpClient) { }
 
     buscarTodos(): Observable<Produto[]> {
@@ -26,19 +26,10 @@ export class ProdutoService {
             );
     }
 
-    buscarTodosCategoria(id: number): Observable<Produto[]> {
-
-      return this.http.get<Produto[]>(`${this.URL}/produto/categoria/${id}`).pipe(
-        map(response => response)
-    );
-  }
-
-
     salvar(produto: Produto): Observable<Produto> {
-
         const httpOptions = {
             headers: new HttpHeaders({
-              'Content-Type': 'application/json',
+                'Content-Type': 'application/json',
             })
         };
 

@@ -10,7 +10,7 @@ import { Livro } from './livro';
 @Injectable()
 export class LivroService {
 
-    private URL = 'http://localhost:3000';
+    private URL = 'http://localhost:8888';
     constructor(private http: HttpClient) { }
 
     buscarTodos(): Observable<Livro[]> {
@@ -44,7 +44,7 @@ export class LivroService {
 
         if (livro.id) {
             return this.http
-                .put<Livro>(`${this.URL}/livro/${livro.id}`, JSON.stringify(livro), httpOptions);
+                .put<Livro>(`${this.URL}/livro`, JSON.stringify(livro), httpOptions);
         } else {
             return this.http
                 .post<Livro>(`${this.URL}/livro`, JSON.stringify(livro), httpOptions);

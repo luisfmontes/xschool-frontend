@@ -1,0 +1,101 @@
+<div class="col-md-10 mt-4 mx-auto my-5">
+  <div class="jumbotron py-3">
+    <h3 class="f-Cormorant text-uppercase text-center">{{ titulo }}</h3>
+    <p class="text-right text-danger m-0" style="font-size: 12px;">
+      * Campos obrigatórios
+    </p>
+    <form [formGroup]="usuarioForm" (ngSubmit)="salvar(usuarioForm.value)" autocomplete="off">
+      <div class="form-group">
+        <p class="m-0 p-0 text-danger d-inline">*</p>
+        <label for="nome">Nome</label>
+        <input type="text" class="form-control mY-5" id="nome" placeholder="Nome" formControlName="nome"
+          [ngClass]="{
+            'is-valid':
+              !usuarioForm.controls['nome'].invalid &&
+              (usuarioForm.controls['nome'].dirty ||
+                usuarioForm.controls['nome'].touched),
+            'is-invalid':
+              usuarioForm.controls['nome'].invalid &&
+              (usuarioForm.controls['nome'].dirty ||
+                usuarioForm.controls['nome'].touched)
+          }" />
+          <RNCR-validation-message
+          class="invalid-feedback"
+          [control]="usuarioForm.controls['nome']"
+        ></RNCR-validation-message>
+      </div>
+      <div class="form-group">
+        <p class="m-0 p-0 text-danger d-inline">*</p>
+        <label for="email">Email</label>
+        <input type="text" class="form-control mY-5" id="email" placeholder="Email" formControlName="email"
+          [ngClass]="{
+            'is-valid':
+              !usuarioForm.controls['email'].invalid &&
+              (usuarioForm.controls['email'].dirty ||
+                usuarioForm.controls['email'].touched),
+            'is-invalid':
+              usuarioForm.controls['email'].invalid &&
+              (usuarioForm.controls['email'].dirty ||
+                usuarioForm.controls['email'].touched)
+          }" />
+          <RNCR-validation-message
+          class="invalid-feedback"
+          [control]="usuarioForm.controls['email']"
+        ></RNCR-validation-message>
+      </div>
+      <div class="form-group">
+        <p class="m-0 p-0 text-danger d-inline">*</p>
+        <label for="senha">Senha</label>
+        <input type="text" class="form-control mY-5" id="senha" placeholder="Senha" 
+          formControlName="senha" [ngClass]="{
+            'is-valid':
+              !usuarioForm.controls['senha'].invalid &&
+              (usuarioForm.controls['senha'].dirty ||
+                usuarioForm.controls['senha'].touched),
+            'is-invalid':
+              usuarioForm.controls['senha'].invalid &&
+              (usuarioForm.controls['senha'].dirty ||
+                usuarioForm.controls['senha'].touched)
+          }" />
+          <RNCR-validation-message
+          class="invalid-feedback"
+          [control]="usuarioForm.controls['senha']"
+        ></RNCR-validation-message>
+      </div>
+      <div class="form-group">
+        <p class="m-0 p-0 text-danger d-inline">*</p>
+        <label for="cpf">CPF</label>
+        <input type="text" class="form-control mY-5" id="cpf" placeholder="CPF" formControlName="cpf"
+          [ngClass]="{
+            'is-valid':
+              !usuarioForm.controls['cpf'].invalid &&
+              (usuarioForm.controls['cpf'].dirty ||
+                usuarioForm.controls['cpf'].touched),
+            'is-invalid':
+              usuarioForm.controls['cpf'].invalid &&
+              (usuarioForm.controls['cpf'].dirty ||
+                usuarioForm.controls['cpf'].touched)
+          }" />
+          <RNCR-validation-message
+          class="invalid-feedback"
+          [control]="usuarioForm.controls['cpf']"
+        ></RNCR-validation-message>
+      </div>
+      <div class="row mb-4">
+        <div class="col-md-5">
+          <button type="submit" class="btn btn-success btn-block" [disabled]="!usuarioForm.valid" [routerLink]="['/usuario']">
+            Salvar
+          </button>
+        </div>
+        <div class="col-md"></div>
+        <div class="col-md-5">
+          <button [routerLink]="['/']" class="btn btn-danger btn-block">
+            Voltar
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- <pre>{{ usuarioForm.value | json }}</pre> -->
