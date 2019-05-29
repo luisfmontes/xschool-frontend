@@ -28,10 +28,10 @@
         <td>{{livro.npaginas}}</td>
         <td>{{livro.tipo}}</td>
         <td>{{livro.categoria.nome}}</td>
-        <td>{{livro.autor.nome}}</td>
+        <td>{{livro.autor}}</td>
         <td>
           <a [routerLink]="['/livro/update', livro.id]"><img class="iconimag" src="assets/Imagens/lapis.png" alt="Alterar Livro"> </a> &nbsp;
-          <a (click)="excluir(livro.id)"><img class="iconimag" src="assets/Imagens/lixo.jpg" alt="Deletar Livro"></a>
+          <a (click)="excluir(livro.id)"><img class="iconimag" src="assets/Imagens/trash-can_38501.png" alt="Deletar Livro"></a>
         </td>
       </tr>
     </tbody>

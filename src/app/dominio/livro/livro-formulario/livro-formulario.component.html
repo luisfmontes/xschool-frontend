@@ -103,23 +103,22 @@
       </div>
       <div class="form-group">
         <p class="m-0 p-0 text-danger d-inline">*</p>
-        <label for="nome">Autor</label>
-        <select class="custom-select" formControlName="autor" [compareWith]="compareFn" [ngClass]="{
-        'is-valid':
-          !livroForm.controls['autor'].invalid &&
-          (livroForm.controls['autor'].dirty ||
-            livroForm.controls['autor'].touched),
-        'is-invalid':
-          livroForm.controls['autor'].invalid &&
-          (livroForm.controls['autor'].dirty ||
-            livroForm.controls['autor'].touched)
-      }">
-          <option *ngFor="let autor of autores" [ngValue]="autor">{{autor.nome}}</option>
-        </select>
-        <RNCR-validation-message
-        class="invalid-feedback"
-        [control]="livroForm.controls['autor']"
-      ></RNCR-validation-message>
+        <label for="autor">Autor</label>
+        <input type="text" class="form-control mY-5" id="autor" placeholder="Autor de Livro" formControlName="autor"
+          [ngClass]="{
+            'is-valid':
+              !livroForm.controls['autor'].invalid &&
+              (livroForm.controls['autor'].dirty ||
+                livroForm.controls['autor'].touched),
+            'is-invalid':
+              livroForm.controls['autor'].invalid &&
+              (livroForm.controls['autor'].dirty ||
+                livroForm.controls['autor'].touched)
+          }" />
+          <RNCR-validation-message
+          class="invalid-feedback"
+          [control]="livroForm.controls['autor']"
+        ></RNCR-validation-message>
       </div>
       <div class="form-group">
         <p class="m-0 p-0 text-danger d-inline">*</p>
