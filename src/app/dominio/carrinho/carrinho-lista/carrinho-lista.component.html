@@ -4,17 +4,16 @@
     <div>
       <div class="row">
         <div class="col-2">
-          <p> {{ itemCarrinho.livro.titulo }}</p>
+          <p> {{ itemCarrinho.livro?.titulo }}</p>
         </div>
         <div class="col-2">
-           <img *ngIf="livro && (index % 2 != 0)" [src]="ImagPath1" alt="Imagem do livro" style="max-width:32px;" class="small-img"/>
-          <img *ngIf="livro && (index % 2 == 0)" [src]="ImagPath2" alt="Imagem do livro" style="max-width:32px;" class="small-img"/>
+          <img  [src]="itemCarrinho.livro?.imagemp" alt="Imagem do livro" alt="Imagem do livro" style="max-width:32px;" class="small-img"/>
         </div>
         <div class="col-2">
-          <p>{{itemCarrinho.livro.autor.nome}}</p>
+          <p>{{itemCarrinho.livro?.autor.nome}}</p>
         </div>
         <div class="col-2">
-          <p>R$ {{ (itemCarrinho.quantidade * itemCarrinho.livro.preco).toFixed(2) }}</p>
+          <p>R$ {{ (itemCarrinho.quantidade * itemCarrinho.livro?.preco).toFixed(2) }}</p>
           <!-- descricao -->
         </div>
         <div class="col-2">

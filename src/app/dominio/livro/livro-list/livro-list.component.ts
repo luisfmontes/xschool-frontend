@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class LivroListComponent implements OnInit {
 
-    livros: Livro[];
+    livros: Livro[] = [];
 
 
     constructor(
@@ -23,7 +23,13 @@ export class LivroListComponent implements OnInit {
 
       this.livroService.buscarTodos()
       .subscribe(resposta => {
-        this.livros = resposta; });
+        resposta.forEach(element => {
+          if (
+            element.dono == "luisf"             
+          ) {
+            this.livros.push(element);
+          } 
+        }); });
     }
 
     excluir(livroId: number) {

@@ -1,7 +1,6 @@
 <div class="place-info-box">
   <span class="place-info-box-icon">
-    <img *ngIf="livro && (index % 2 != 0)" [src]="ImagPath1" alt="Imagem do livro" />
-    <img *ngIf="livro && (index % 2 == 0)" [src]="ImagPath2" alt="Imagem do livro" />
+    <img  [src]="livro?.imagemp" alt="Imagem do livro" />
   </span>
   <div class="place-info-box-content">
     <span class="place-info-box-text">{{ livro?.titulo }}</span>

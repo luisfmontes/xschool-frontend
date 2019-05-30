@@ -4,7 +4,7 @@ import { HomeComponent } from './dominio/home/home.component';
 import { FavoritosComponent } from './dominio/favoritos/favoritos/favoritos.component';
 
 const routes: Routes = [
-  { path: "", redirectTo: "/home", pathMatch: "full" },
+  { path: "", redirectTo: "/livro", pathMatch: "full" },
   { path: "home", component: HomeComponent },
   { path: "produto", loadChildren: "./dominio/produto/produto.module#ProdutoModule" },
   { path: "livro", loadChildren: "./dominio/livro/livro.module#LivroModule" },

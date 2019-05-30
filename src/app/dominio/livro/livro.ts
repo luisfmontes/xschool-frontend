@@ -10,5 +10,6 @@ export class Livro {
   categoria: Categoria;
   autor: string;
   favorito: boolean;
-  user: string;
+  dono: string;
+  imagemp: string;
 }
