@@ -23,12 +23,9 @@ export class LivroListComponent implements OnInit {
 
       this.livroService.buscarTodos()
       .subscribe(resposta => {
+        console.log('resposta: ', resposta)
         resposta.forEach(element => {
-          if (
-            element.dono == "luisf"             
-          ) {
-            this.livros.push(element);
-          } 
+          this.livros.push(element);
         }); });
     }
 

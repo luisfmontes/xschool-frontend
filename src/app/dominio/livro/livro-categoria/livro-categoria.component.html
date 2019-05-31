@@ -1,0 +1,26 @@
+<section class="content">
+  <div class="col-md-6">
+    <h3>Filtrar por categorias</h3>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <select class="custom-select" (change)="selectCategoria($event)">
+        <option> </option>
+        <option *ngFor="let categoria of categorias" [value]="categoria.id">{{categoria.nome}}</option>
+      </select>
+    </div>
+    <div class="col-md-3">
+      <button type="button" class=" btn btn-primary btn-block" (click)="filtrar()"> Filtrar</button>
+    </div>
+  </div>
+  <div class="row mb-3">
+    <div class="col-sm-6 col-xs-12 mt-2"
+      *ngFor="let livro of (livros | paginate: { itemsPerPage: 6, currentPage: p }); let i=index">
+      <XSO-livro-card [livro]="livro" [index]='i' (ReadMoreE)="ReadMoreEvent($event)" [receive]="emitter">
+      </XSO-livro-card>
+    </div>
+  </div>
+  <div class="row mx-auto my-2">
+    <pagination-controls class="my-2 mx-auto col-md-6" (pageChange)="p = $event"></pagination-controls>
+  </div>
+</section>

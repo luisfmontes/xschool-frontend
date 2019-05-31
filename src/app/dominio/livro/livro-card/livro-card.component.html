@@ -11,6 +11,6 @@
         <img *ngIf="fav" class="iconimag" [src]="fav_on" alt="Favorito" />
         <img *ngIf="!fav" class="iconimag" [src]="fav_none" alt="Not Favorito" />
       </a></span>
-      <span *ngIf="!flist" class="place-info-box-content m-0"> <button class="btn btn-secondary" (click)="adicionarLivro(livro)">Adicionar ao Carrinho</button></span>
+      <span  class="place-info-box-content m-0"> <button class="btn btn-secondary" (click)="adicionarLivro(livro)">Adicionar ao Carrinho</button></span> <!-- *ngIf="!flist" -->
   </div>
 </div>

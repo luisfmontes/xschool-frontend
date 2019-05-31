@@ -1,8 +1,10 @@
 <section class="content">
+    <h3 class="mb-2">Livros a venda</h3>
     <div class="row">
-        <div class="col-sm-6 col-xs-12 mt-2" *ngFor="let livro of (livros | paginate: { itemsPerPage: 6, currentPage: p }); let i=index">
-            <XSO-livro-card [livro]="livro" [index]='i' (ReadMoreE)="ReadMoreEvent($event)"
-            [receive]="emitter"></XSO-livro-card>
+        <div class="col-sm-6 col-xs-12 mt-2"
+            *ngFor="let livro of (livros | paginate: { itemsPerPage: 6, currentPage: p }); let i=index">
+            <XSO-livro-card [livro]="livro" [index]='i' (ReadMoreE)="ReadMoreEvent($event)" [receive]="emitter">
+            </XSO-livro-card>
         </div>
     </div>
     <div class="row mx-auto my-2">

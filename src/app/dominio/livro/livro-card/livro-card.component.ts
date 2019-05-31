@@ -45,7 +45,7 @@ export class LivroCardComponent implements OnInit {
       (error) => {
         console.log('Erro no back-end');
       });
-      window.location.reload();
+      location.reload();
   }
 
   adicionarLivro(livro: Livro) {

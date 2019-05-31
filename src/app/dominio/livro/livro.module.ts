@@ -13,13 +13,15 @@ import { LivroCardComponent } from './livro-card/livro-card.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { NgxMaskModule } from "ngx-mask";
 import { SharedModule } from '../shared/shared.module';
+import { LivroCategoriaComponent } from './livro-categoria/livro-categoria.component';
 
 @NgModule({
     declarations: [
         LivroListComponent,
         LivroFormularioComponent,
         LivroHomeComponent,
-        LivroCardComponent
+        LivroCardComponent,
+        LivroCategoriaComponent
     ],
     imports: [
         // Angular

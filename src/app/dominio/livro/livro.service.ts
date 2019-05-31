@@ -26,6 +26,15 @@ export class LivroService {
             );
     }
 
+    
+    buscarPorCategoriaId(categoriaId: number): Observable<Livro> {
+        return this.http
+            .get<Livro>(`${this.URL}/livro/categoria/${categoriaId}`)
+            .pipe(
+                map(response => response)
+            );
+    }
+
     buscarTodosCategoria(id: number): Observable<Livro[]> {
 
       return this.http.get<Livro[]>(`${this.URL}/livro/categoria/${id}`).pipe(
